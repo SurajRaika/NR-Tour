@@ -3,62 +3,56 @@ import { getCollection } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
 const allPosts = await getCollection("posts");
-
-// Sort posts by date in descending order (newest first)
-const sortedPosts = allPosts.sort(
-  (a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate)
-);
 ---
 
-<BaseLayout>
-    <section>
-        <div class="px-8 py-12 md:px-12 mx-auto lg:pb-24 max-w-7xl lg:px-32 lg:pt-32">
-          <div class="lg:text-center">
-            <h1 class="text-4xl tracking-tight font-medium font-display text-black md:text-8xl">
-              Convenient <strong>One-Way Taxi</strong> Services in Rajasthan  
-            </h1>
-            <p class="mt-4 text-lg text-gray-700">
-              Travel hassle-free with <strong>New Rajasthan Tours (NRtours)</strong> – providing reliable, affordable one-way taxi rides across Rajasthan.  
-            </p>
-          </div>
-        </div>
-    </section>
+<BaseLayout title="Airport Taxi Services in Rajasthan" description="Reliable and affordable airport taxi services in Rajasthan. Book your airport taxi with New Rajasthan Tours (NRtours) for a hassle-free travel experience." tags={["airport taxi", "Rajasthan airport taxi", "NRtours", "Jaipur airport taxi"]}>
+  <section>
+    <div class="px-8 py-12 md:px-12 mx-auto lg:pb-24 max-w-7xl lg:px-32 lg:pt-32">
+      <div class="lg:text-center">
+        <h1 class="text-4xl tracking-tight font-medium font-display text-black md:text-8xl">
+          Reliable <strong>Airport Taxi</strong><br class="hidden md:block"> Services in Rajasthan  
+        </h1>
+        <p class="mt-4 text-lg text-gray-700">
+          Travel stress-free with <strong>New Rajasthan Tours (NRtours)</strong> – offering safe, affordable, and punctual airport taxi services across Rajasthan. 
+        </p>
+      </div>
+    </div>
+  </section>
 
-    <section>
-        <div class="px-6 py-12 md:px-12 mx-auto lg:pb-24 max-w-7xl lg:px-32">
-          <div class="relative bg-black p-10 lg:p-20 rounded-lg shadow-lg">
-            <h2 class="text-center text-3xl lg:text-5xl font-semibold font-display text-white leading-snug">
-              Choose Your Destination
-            </h2>
-            <form x-data="{ destination: '' }" class="mt-8">
-              <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                <select 
-                  x-model="destination" 
-                  class="block w-full rounded-lg border border-zinc-700 px-4 py-3 font-spline text-sm font-medium text-white bg-zinc-900 focus:border-zinc-600 focus:outline-none focus:ring-2 focus:ring-zinc-600/50 disabled:opacity-50"
-                  required
-                >
-                  <option value="" disabled selected>Select Destination</option>
-                  <option value="Jaipur">Jaipur</option>
-                  <option value="Udaipur">Udaipur</option>
-                  <option value="Jodhpur">Jodhpur</option>
-                  <option value="Kota">Kota</option>
-                  <option value="Bikaner">Bikaner</option>
-                </select>
-                <a 
-                  :href="'https://wa.me/7773849334?text=Hello%2C%20I%20need%20a%20one-way%20taxi%20to%20' + encodeURIComponent(destination)" 
-                  target="_blank"
-                  class="inline-flex items-center justify-center w-full sm:w-auto px-5 py-3 rounded-lg text-sm font-medium transition-all duration-300 bg-white text-black border border-transparent focus:ring-2 focus:ring-black hover:bg-white/10 hover:text-white disabled:opacity-50 disabled:pointer-events-none"
-                  :class="{ 'pointer-events-none opacity': !destination }"
-                >
-                  <span>Book Now</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="ml-2 w-4">
-                    <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"></path>
-                  </svg>
-                </a>
-              </div>
-            </form>
+  <section>
+    <div class="px-6 py-12 md:px-12 mx-auto lg:pb-24 max-w-7xl lg:px-32">
+      <div class="relative bg-black p-10 lg:p-20 rounded-lg shadow-lg">
+        <h2 class="text-center text-3xl lg:text-5xl font-semibold font-display text-white leading-snug">
+          Book Your Airport Transfer
+        </h2>
+        <form x-data="{ airport: '' }" class="mt-8">
+          <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <select 
+              x-model="airport" 
+              class="block w-full rounded-lg border border-zinc-700 px-4 py-3 font-spline text-sm font-medium text-white bg-zinc-900 focus:border-zinc-600 focus:outline-none focus:ring-2 focus:ring-zinc-600/50 disabled:opacity-50"
+              required
+            >
+              <option value="" disabled selected>Select Airport</option>
+              <option value="Jaipur Airport">Jaipur Airport</option>
+              <option value="Udaipur Airport">Udaipur Airport</option>
+              <option value="Jodhpur Airport">Jodhpur Airport</option>
+              <option value="Kota Airport">Kota Airport</option>
+              <option value="Bikaner Airport">Bikaner Airport</option>
+            </select>
+            <a 
+              :href="'https://wa.me/7773849334?text=Hello%2C%20I%20need%20an%20airport%20taxi%20from%20' + encodeURIComponent(airport)" 
+              target="_blank"
+              class="inline-flex items-center justify-center w-full sm:w-auto px-5 py-3 rounded-lg text-sm font-medium transition-all duration-300 bg-white text-black border border-transparent focus:ring-2 focus:ring-black hover:bg-white/10 hover:text-white disabled:opacity-50 disabled:pointer-events-none"
+              :class="{ 'pointer-events-none opacity': !airport }"
+            >
+              <span>Book Now</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="ml-2 w-4">
+                <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"></path>
+              </svg>
+            </a>
           </div>
-        </div>
-    </section>
-
+        </form>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

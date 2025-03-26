@@ -1,15 +1,47 @@
 ---
 import { getCollection } from 'astro:content';
 import MarkdownPostLayout from '../../layouts/MarkdownPostLayout.astro';
+
 export async function getStaticPaths() {
   const blogEntries = await getCollection('posts');
   return blogEntries.map(entry => ({
-    params: { slug: entry.slug }, props: { entry },
+    params: { slug: entry.slug },
+    props: { entry }
   }));
 }
+
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+// Use blog info from entry.data for SEO/head information.
+const seo = {
+  title: entry.data.title || "Default Title",
+  description: entry.data.description || "Default description",
+  canonical: entry.data.canonical || `https://www.example.com/posts/${entry.slug}`,
+  openGraph: {
+    url: entry.data.ogUrl || `https://www.example.com/posts/${entry.slug}`,
+    title: entry.data.ogTitle || entry.data.title,
+    description: entry.data.ogDescription || entry.data.description,
+    images: entry.data.ogImage
+      ? [
+          {
+            url: entry.data.ogImage,
+            width: 1200,
+            height: 630,
+            alt: entry.data.title,
+            type: "image/jpeg"
+          }
+        ]
+      : [],
+    site_name: entry.data.siteName || "DynamicSiteName"
+  },
+  twitter: {
+    handle: entry.data.twitterHandle || "@DefaultHandle",
+    site: entry.data.twitterSite || "@DefaultSite",
+    cardType: "summary_large_image"
+  }
+};
 ---
-<MarkdownPostLayout frontmatter={entry.data}>
+<MarkdownPostLayout frontmatter={entry.data} seo={seo}>
   <Content />
 </MarkdownPostLayout>

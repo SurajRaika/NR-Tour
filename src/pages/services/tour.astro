@@ -1,0 +1,59 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const allPosts = await getCollection("posts");
+---
+
+<BaseLayout title="Explore Rajasthan Tours" description="Discover the best tours in Rajasthan and book your adventure with New Rajasthan Tours (NRtours)."
+    tags={["Rajasthan tours", "Jaipur tour", "Udaipur tour", "Heritage tour", "NRtours"]}>
+    <section>
+        <div class="px-8 py-12 md:px-12 mx-auto lg:pb-24 max-w-7xl lg:px-32 lg:pt-32">
+            <div class="lg:text-center">
+                <h1 class="text-4xl tracking-tight font-medium font-display text-black md:text-8xl">
+                    Explore the Wonders of <strong>Rajasthan</strong><br class="hidden md:block"> Through Our Tours
+                </h1>
+                <p class="mt-4 text-lg text-gray-700">
+                    Embark on a journey with <strong>New Rajasthan Tours (NRtours)</strong> – offering curated tours across Rajasthan for an unforgettable experience.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="px-6 py-12 md:px-12 mx-auto lg:pb-24 max-w-7xl lg:px-32">
+            <div class="relative bg-black p-10 lg:p-20 rounded-lg shadow-lg">
+                <h2 class="text-center text-3xl lg:text-5xl font-semibold font-display text-white leading-snug">
+                    Book Your Tour
+                </h2>
+                <form x-data="{ tour: '' }" class="mt-8">
+                    <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                        <select 
+                            x-model="tour" 
+                            class="block w-full rounded-lg border border-zinc-700 px-4 py-3 font-spline text-sm font-medium text-white bg-zinc-900 focus:border-zinc-600 focus:outline-none focus:ring-2 focus:ring-zinc-600/50 disabled:opacity-50"
+                            required
+                        >
+                            <option value="" disabled selected>Select Tour</option>
+                            <option value="Jaipur City Tour">Jaipur City Tour</option>
+                            <option value="Udaipur Love Tour">Udaipur Love Tour</option>
+                            <option value="Jodhpur Heritage Tour">Jodhpur Heritage Tour</option>
+                            <option value="Rajasthan Desert Safari">Rajasthan Desert Safari</option>
+                            <option value="Ranthambore Wildlife Tour">Ranthambore Wildlife Tour</option>
+                        </select>
+                        <a 
+                            :href="'https://wa.me/7773849334?text=Hello%2C%20I%20am%20interested%20in%20the%20' + encodeURIComponent(tour) + '%20tour'" 
+                            target="_blank"
+                            class="inline-flex items-center justify-center w-full sm:w-auto px-5 py-3 rounded-lg text-sm font-medium transition-all duration-300 bg-white text-black border border-transparent focus:ring-2 focus:ring-black hover:bg-white/10 hover:text-white disabled:opacity-50 disabled:pointer-events-none"
+                            :class="{ 'pointer-events-none opacity': !tour }"
+                        >
+                            <span>Book Now</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="ml-2 w-4">
+                                <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
