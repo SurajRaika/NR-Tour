@@ -1,0 +1,110 @@
+---
+import { getCollection } from "astro:content";
+const projects = [
+  { title: "Project 1", image: "/images/car1.png" },
+  { title: "Project 2", image: "/images/car1.png" },
+  { title: "Project 3", image: "/images/car1.png" },
+  { title: "Project 4", image: "/images/car1.png" },
+  { title: "Project 5", image: "/images/car1.png" },
+  { title: "Project 6", image: "/images/car1.png" },
+  { title: "Project 7", image: "/images/car1.png" },
+  { title: "Project 8", image: "/images/car1.png" },
+  { title: "Project 9", image: "/images/car1.png" },
+  { title: "Project 10", image: "/images/car1.png" }
+];
+const taxiCars = [
+  { 
+    name: "Innova Crysta", 
+    image: "https://www.kindpng.com/picc/m/133-1333158_innova-crysta-car-hire-prayaanam-toyota-innova-2019.png", 
+    details: ["7-seater", "3 bags", "₹12/km"] 
+  },
+  { 
+    name: "Mercedes S-Class", 
+    image: "https://tse3.mm.bing.net/th?id=OIP.P6jjet6Mfb1_Fnx-aLT7zwHaD9&pid=Api&P=0&h=180", 
+    details: ["5-seater", "2 bags", "₹50/km"] 
+  },
+  { 
+    name: "BMW X5", 
+    image: "https://i.pinimg.com/736x/00/09/c2/0009c2d9f3300b8c786463c18e02d59c.jpg", 
+    details: ["5-seater", "4 bags", "₹35/km"] 
+  },
+];
+
+
+---
+
+<style>
+  .shadowww {
+    -webkit-box-shadow: 0px 17px 31px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 17px 31px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 17px 31px 0px rgba(0, 0, 0, 0.75);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+
+<section id="services" class="border-b border-black/20 bg-accent-500">
+  <div data-aos="fade-up" class="mx-auto max-w-7xl border-x border-black/20 px-8 py-12 pb-6 gradient-grid">
+    <div class="mx-auto">
+      <h3 class="md:hidden text-3xl text-center font-display text-black uppercase">
+        Our Premium Rides
+      </h3>
+      <h3 class="hidden md:block text-3xl text-start font-display text-black uppercase">
+        Experience Comfort  with New Rajasthan Tours
+      </h3>
+    </div>
+  </div>
+</section>
+
+
+<section data-aos="fade-up" class="border-b border-black/20 bg-accent-500">
+  <div class="mx-auto max-w-7xl border-black/20 border-x" x-data="{ init() { new Splide(this.$refs.splide, { perPage: 4, gap: '0rem', breakpoints: {900: { perPage: 3 }, 1100: { perPage: 4 }, 640: { perPage: 1 } } }).mount(); } }">
+    <section class="splide" x-ref="splide" id="splide01" aria-roledescription="carousel">
+      <div class="splide__arrows splide__arrows--ltr items-center">
+        <button class="splide__arrow splide__arrow--prev" type="button" aria-label="Previous slide" aria-controls="splide01-track">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" focusable="false">
+            <path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path>
+          </svg>
+        </button>
+        <button class="splide__arrow splide__arrow--next" type="button" aria-label="Next slide" aria-controls="splide01-track">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" focusable="false">
+            <path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="splide__track" id="splide01-track">
+        <ul class="splide__list">
+          {taxiCars.map((car, index) => (
+            <li class="flex justify-center flex-col splide__slide  border border-black/20" key={index}>
+              <div class="text-black text-xs order-first p-3 text-center lg:border-r lg:border-black/20">
+                <span class="block font-semibold uppercase">{car.name}</span>
+              </div>
+        
+              <div class=" text-neutral-800 text-xs  border order-first  text-center lg:border-r border-black/20">
+                <ul class="grid grid-cols-3 gap-4 text-center w-full">
+  {car.details.map((detail, detailIndex) => (
+    <li key={detailIndex} class="border-black/20 font-semibold  uppercase p-2   text-nowrap ">{detail}</li>
+  ))}
+</ul>
+
+              </div>
+        
+              <div class="bg-[white] shadow-xl flex justify-center items-center border-t border-black/20 lg:border-r aspect-[8/9]">
+                <div class="w-[80%] max-h-[70%] h-[100%] shadow-3xl bg-[#f7f7f7]/0">
+                  <img 
+                    alt={car.name} 
+                    class="object-contain object-top bg-white" 
+                    src={car.image} 
+                  />
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+        
+      </div>
+    </section>
+  </div>
+</section>

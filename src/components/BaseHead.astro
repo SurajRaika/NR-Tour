@@ -1,22 +1,31 @@
 ---
 import "../styles/global.css";
 import { AstroSeo } from "@astrolib/seo";
+
+// Props
+const { 
+  title = "NRtours - Best Taxi Service in Rajasthan", 
+  description = "Book reliable and affordable taxi services across Rajasthan with New Rajasthan Tours (NRtours). Hassle-free rides, anytime, anywhere.", 
+  tags = ["Taxi Service", "Rajasthan Travel", "NRtours", "One-Way Taxi", "Airport Transfers"] 
+} = Astro.props;
+
+const formattedTags = Array.isArray(tags) ? tags.join(", ") : tags;
 ---
 
 <AstroSeo
-  title="Your Page Title"
-  description="A detailed description of your page content."
-  canonical="https://yoursite.com/current-page"
+  title={title}
+  description={description}
+  canonical={`https://yoursite.com/${title.toLowerCase().replace(/\s+/g, "-")}`}
   openGraph={{
-    url: "https://yoursite.com/current-page",
-    title: "Your Page Title",
-    description: "A detailed description of your page content.",
+    url: `https://yoursite.com/${title.toLowerCase().replace(/\s+/g, "-")}`,
+    title,
+    description,
     images: [
       {
         url: "https://yoursite.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Open Graph Image Alt",
+        alt: `${title} Open Graph Image`,
         type: "image/jpeg",
       },
     ],
@@ -30,6 +39,10 @@ import { AstroSeo } from "@astrolib/seo";
     cardType: "summary_large_image",
   }}
 />
+
+
+
+
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -111,4 +124,19 @@ import { AstroSeo } from "@astrolib/seo";
   href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap"
   rel="stylesheet"
 />
+
+
+
+<script src="https://unpkg.com/mailgo@0.12.2/dist/mailgo.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"
+></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+></script>
+
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
