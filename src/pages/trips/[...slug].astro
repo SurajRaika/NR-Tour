@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import TripPostLayout from '../../layouts/TripPostLayout.astro';
+
+export async function getStaticPaths() {
+  const tripsEntries = await getCollection('trips'); // Updated to use 'trips' collection
+  return tripsEntries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry }
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render(); // Supports MDX rendering
+
+// Use trip info from entry.data for SEO/head information.
+const seo = {
+  title: entry.data.title || "Default Title",
+  description: entry.data.description || "Default description",
+  canonical: entry.data.canonical || `https://www.example.com/trips/${entry.slug}`,
+  openGraph: {
+    url: entry.data.ogUrl || `https://www.example.com/trips/${entry.slug}`,
+    title: entry.data.ogTitle || entry.data.title,
+    description: entry.data.ogDescription || entry.data.description,
+    images: entry.data.image
+      ? [
+          {
+            url: entry.data.image.url,
+            width: 1200,
+            height: 630,
+            alt: entry.data.image.alt,
+            type: "image/jpeg"
+          }
+        ]
+      : [],
+    site_name: entry.data.siteName || "DynamicSiteName"
+  },
+  twitter: {
+    handle: entry.data.twitterHandle || "@DefaultHandle",
+    site: entry.data.twitterSite || "@DefaultSite",
+    cardType: "summary_large_image"
+  }
+};
+---
+<TripPostLayout frontmatter={entry.data} seo={seo}>
+  
+  <Content />
+</TripPostLayout>

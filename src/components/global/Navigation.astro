@@ -21,9 +21,9 @@
       <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden py-12 md:py-0 md:flex md:items-end justify-center md:flex-row">
         <ul class="space-y-2 list-none md:space-y-0 md:ml-auto items-center md:inline-flex justify-center text-center md:text-left gap-3">
           <li><a href="/services/one-way" class="text-black hover:text-blue-500">One-Way</a></li>
-          <li><a href="/services/TaxiPackages" class="text-black hover:text-blue-500">Taxi Packages</a></li>
+          <li><a href="/TaxiPackages" class="text-black hover:text-blue-500">Taxi Packages</a></li>
           <li>
-            <a href="tel:+123456789" class="py-2 px-6 border focus:ring-2 rounded-md border-transparent bg-black hover:bg-black/90 text-white duration-200 focus:ring-offset-2 focus:ring-white inline-flex items-center justify-center ring-1 ring-transparent lg:ml-auto">
+            <a href="tel:+917976592083" class="py-2 px-6 border focus:ring-2 rounded-md border-transparent bg-black hover:bg-black/90 text-white duration-200 focus:ring-offset-2 focus:ring-white inline-flex items-center justify-center ring-1 ring-transparent lg:ml-auto">
               Call Now
             </a>
           </li>
@@ -43,3 +43,78 @@
     </ol>
   </div>
 </section>
+
+<style>
+  .m-modal-content {
+    background: #1e1e1e;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 2px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: auto;
+    font-family: 'Inter', sans-serif;
+}
+
+.m-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f8f8f8;
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.m-details {
+    font-size: 0.9rem;
+    color: #bdbdbd;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.m-open {
+    display: block;
+    background: #2e2e2e;
+    color: #ffffff;
+    padding: 10px;
+    margin: 8px 0;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.m-open:hover {
+    background: #3a3a3a;
+}
+
+.m-copy {
+    display: block;
+    background: #444;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.m-copy:hover {
+    background: #555;
+}
+
+.m-by {
+    display: block;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.m-by:hover {
+    color: #aaa;
+}
+
+</style>

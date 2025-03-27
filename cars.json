@@ -1,0 +1,74 @@
+[
+    {
+        "name": "Tempo Traveller",
+        "image": "https://jodhpurtaxiservice.co.in/wp-content/uploads/2022/08/tmpo.jpg",
+        "details": [
+            "18-seater",
+            "8 bags",
+            "₹28/km"
+        ]
+    },
+    {
+        "name": "Innova Crysta",
+        "image": "https://jodhpurtaxiservice.co.in/wp-content/uploads/2022/08/aaa.jpg",
+        "details": [
+            "7-seater",
+            "3 bags",
+            "₹17.99/km"
+        ]
+    },
+    {
+        "name": "Ertiga",
+        "image": "https://jodhpurtaxiservice.co.in/wp-content/uploads/2022/08/ertiga.jpg",
+        "details": [
+            "7-seater",
+            "3 bags",
+            "₹11.99/km"
+        ]
+    },
+    {
+        "name": "Toyota Innova",
+        "image": "https://jodhpurtaxiservice.co.in/wp-content/uploads/2022/08/toyota-innova-with-a-c-5-1-500x500-1.jpg",
+        "details": [
+            "7-seater",
+            "3 bags",
+            "₹15.99/km"
+        ]
+    },
+    {
+        "name": "Toyota Etios",
+        "image": "https://jodhpurtaxiservice.co.in/wp-content/uploads/2022/08/etios.jpg",
+        "details": [
+            "5-seater",
+            "2 bags",
+            "₹10/km"
+        ]
+    },
+    {
+        "name": "Swift Dzire",
+        "image": "https://jodhpurtaxiservice.co.in/wp-content/uploads/2022/08/Economy-Car.jpg",
+        "details": [
+            "5-seater",
+            "2 bags",
+            "₹10/km"
+        ]
+    },
+    {
+        "name": "Tata Indigo",
+        "image": "https://jodhpurtaxiservice.co.in/wp-content/uploads/2022/08/indigo.jpg",
+        "details": [
+            "5-seater",
+            "2 bags",
+            "₹10/km"
+        ]
+    },
+    {
+        "name": "Mini Coach + Bus",
+        "image": "https://jodhpurtaxiservice.co.in/wp-content/uploads/2022/08/benz.jpg",
+        "details": [
+            "40-seater",
+            "10 bags",
+            "₹34/km"
+        ]
+    }
+]

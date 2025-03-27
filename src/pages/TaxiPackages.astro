@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import EntriesOne from "@/components/entries/EntriesOne.astro";
-import Hero from "@/components/landing/Hero.astro";
 import Cta from "@/components/global/Cta.astro";
 import Cars from "@/components/global/cars.astro";
 
@@ -21,15 +20,19 @@ const taxiPosts = sortedPosts.filter(
 ---
 
 <BaseLayout>
+    <section class="relative bg-gradient-to-br bg-black text-white py-24 text-center">
+        <div class="max-w-4xl mx-auto px-6 lg:px-12">
+            <h1 class="text-5xl font-bold tracking-tight md:text-6xl">
+                Explore Rajasthan with <span class="text-yellow-400">Exclusive Taxi Packages</span>
+            </h1>
+            <p class="mt-6 text-lg text-gray-300 max-w-2xl mx-auto">
+                Choose from our reliable and well-planned taxi packages for a seamless and comfortable journey across Rajasthan.
+            </p>
+        </div>
+    </section>
+
     <section>
         <div class="px-8 md:px-12 mx-auto max-w-7xl py-12 lg:px-32">
-            <ol role="list" class="flex flex-wrap gap-3">
-                {["Airport", "One-Way", "Local", "Outstation", "Tour"].map((tag) => (
-                    <li class="inline-flex items-center uppercase mx-auto hover:text-blue-500 text-xs font-medium text-black">
-                        <a href={`/services/${tag.toLowerCase()}`}>{tag}</a>
-                    </li>
-                ))}
-            </ol>
             <ul class="grid grid-cols-1 mt-12 gap-1 gap-y-24 lg:grid-cols-3 sm:grid-cols-2">
                 {
                     taxiPosts.map((post) => (

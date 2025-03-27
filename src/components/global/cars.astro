@@ -1,36 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-const projects = [
-  { title: "Project 1", image: "/images/car1.png" },
-  { title: "Project 2", image: "/images/car1.png" },
-  { title: "Project 3", image: "/images/car1.png" },
-  { title: "Project 4", image: "/images/car1.png" },
-  { title: "Project 5", image: "/images/car1.png" },
-  { title: "Project 6", image: "/images/car1.png" },
-  { title: "Project 7", image: "/images/car1.png" },
-  { title: "Project 8", image: "/images/car1.png" },
-  { title: "Project 9", image: "/images/car1.png" },
-  { title: "Project 10", image: "/images/car1.png" }
-];
-const taxiCars = [
-  { 
-    name: "Innova Crysta", 
-    image: "https://www.kindpng.com/picc/m/133-1333158_innova-crysta-car-hire-prayaanam-toyota-innova-2019.png", 
-    details: ["7-seater", "3 bags", "₹12/km"] 
-  },
-  { 
-    name: "Mercedes S-Class", 
-    image: "https://tse3.mm.bing.net/th?id=OIP.P6jjet6Mfb1_Fnx-aLT7zwHaD9&pid=Api&P=0&h=180", 
-    details: ["5-seater", "2 bags", "₹50/km"] 
-  },
-  { 
-    name: "BMW X5", 
-    image: "https://i.pinimg.com/736x/00/09/c2/0009c2d9f3300b8c786463c18e02d59c.jpg", 
-    details: ["5-seater", "4 bags", "₹35/km"] 
-  },
-];
-
-
+import taxiCars from "../../../cars.json" assert { type: "json" }; // Import the JSON file
 ---
 
 <style>
@@ -48,10 +18,12 @@ const taxiCars = [
 <section id="services" class="border-b border-black/20 bg-accent-500">
   <div data-aos="fade-up" class="mx-auto max-w-7xl px-8 py-12 pb-6 gradient-grid">
     <div class="mx-auto text-center">
-      <h3 class="text-3xl font-display text-black uppercase">
-        Available Cars
-      </h3>
-      <p class="mt-4 text-base text-black">
+    
+      <h1 class="text-4xl tracking-tight font-medium font-display text-black md:text-6xl">
+        Our Car Collection
+      </h1>
+      
+      <p class="max-w-2xl mx-auto px-6 text-lg text-gray-600 font-inter">
         Check out our selection of available cars.
       </p>
     </div>

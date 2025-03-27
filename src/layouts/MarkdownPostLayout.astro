@@ -31,7 +31,21 @@ Use AstroSeo in all the pages you want different Seo than the index page
     site: seo.twitter?.site || "@site",
     cardType: seo.twitter?.cardType || "summary_large_image",
   }}
+  additionalLinkTags={[
+    { rel: "icon", type: "image/png", href: "/favicons/favicon-96x96.png", sizes: "96x96" },
+    { rel: "icon", type: "image/svg+xml", href: "/favicons/favicon.svg" },
+    { rel: "shortcut icon", href: "/favicons/favicon.ico" },
+    { rel: "apple-touch-icon", sizes: "180x180", href: "/favicons/apple-touch-icon.png" },
+    { rel: "manifest", href: "/favicons/site.webmanifest" },
+  ]}
+  additionalMetaTags={[
+    { name: "msapplication-TileColor", content: "#da532c" },
+    { name: "theme-color", content: "#ffffff" },
+  ]}
 />
+
+
+
 <BaseLayout>
   <section>
     <div class="px-8 py-12 md:px-12 mx-auto lg:pt-24 max-w-7xl lg:px-32">
