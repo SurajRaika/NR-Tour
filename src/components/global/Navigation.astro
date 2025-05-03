@@ -5,7 +5,7 @@
       class="relative flex flex-col w-full mx-auto rounded-md md:rounded-lg md:items-center md:justify-between md:flex-row"
     >
       <div class="flex flex-row items-center justify-between md:justify-start">
-        <a class="text-black hover:text-zinc-500 items-center font-normal uppercase gap-3 inline-flex" href="/">
+        <a class="text-black font-bold hover:text-zinc-500 items-center font-ld uppercase gap-3 inline-flex font-display text-pretty" href="/">
           Rajasthan Taxi Services
         </a>
         <button
@@ -20,12 +20,15 @@
       </div>
       <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden py-12 md:py-0 md:flex md:items-end justify-center md:flex-row">
         <ul class="space-y-2 list-none md:space-y-0 md:ml-auto items-center md:inline-flex justify-center text-center md:text-left gap-3">
-          <li><a href="/services/one-way" class="text-black hover:text-blue-500">One-Way</a></li>
-          <li><a href="/TaxiPackages" class="text-black hover:text-blue-500">Taxi Packages</a></li>
+          <li><a href="/services/one-way" class="text-black   font-bold hover:text-blue-500 font-display text-pretty">One-Way</a></li>
+          <li><a href="/TaxiPackages" class="text-black       font-bold hover:text-blue-500 font-display text-pretty">Taxi Packages</a></li>
           <li>
-            <a href="tel:+917976592083" class="py-2 px-6 border focus:ring-2 rounded-md border-transparent bg-black hover:bg-black/90 text-white duration-200 focus:ring-offset-2 focus:ring-white inline-flex items-center justify-center ring-1 ring-transparent lg:ml-auto">
+            <a href="tel:+917976592083" class="py-2 px-6 border focus:ring-2 rounded-[2px]  border-transparent bg-black hover:bg-black/90 text-white duration-200 focus:ring-offset-2 focus:ring-white font-bold inline-flex items-center justify-center ring-1 ring-transparent lg:ml-auto">
               Call Now
             </a>
+          
+
+
           </li>
         </ul>
       </nav>
