@@ -1,0 +1,28 @@
+---
+// src/components/TocItem.astro
+import type { MarkdownHeading } from 'astro'; // Or import HeadingNode from your types.ts
+
+// If not using a shared types.ts, redefine HeadingNode here or ensure it's passed correctly
+interface HeadingNode extends MarkdownHeading {
+  children: HeadingNode[];
+}
+
+interface Props {
+  heading: HeadingNode;
+}
+
+const { heading } = Astro.props;
+---
+
+<li>
+  <a href={`#${heading.slug}`} class="hover:text-black transition">
+    {heading.text}
+  </a>
+  {heading.children && heading.children.length > 0 && (
+    <ul class="pl-4 mt-1 space-y-1"> {/* Adjusted spacing for nested lists */}
+      {heading.children.map((child) => (
+        <Astro.self heading={child} /> 
+      ))}
+    </ul>
+  )}
+</li>

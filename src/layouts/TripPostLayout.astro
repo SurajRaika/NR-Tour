@@ -1,36 +1,59 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
-const { frontmatter, seo } = Astro.props; // Accept `seo` as a prop
 import { AstroSeo } from "@astrolib/seo";
+
+import type { MarkdownHeading } from 'astro';
+
+const { frontmatter, seo, headings } = Astro.props;
+
+console.log("headings:", frontmatter);
+interface HeadingNode extends MarkdownHeading {
+  children: HeadingNode[];
+}
+
+function buildHeadingTree(headings: MarkdownHeading[] | undefined): HeadingNode[] {
+  const tree: HeadingNode[] = [];
+  const stack: Array<{ depth: number; children: HeadingNode[] }> = [{ depth: 0, children: tree }];
+
+  if (headings && Array.isArray(headings)) {
+    headings.forEach((heading) => {
+      const node: HeadingNode = { ...heading, children: [] };
+      while (stack[stack.length - 1].depth >= heading.depth) stack.pop();
+      stack[stack.length - 1].children.push(node);
+      stack.push(node);
+    });
+  }
+
+  return tree;
+}
+
+const headingTree = buildHeadingTree(headings);
+
 ---
 
-
-<!---
-Use AstroSeo in all the pages you want different Seo than the index page
--->
 <AstroSeo
-  title={seo.title || "Default Title"}
-  description={seo.description || "Default description"}
-  canonical={seo.canonical || "https://www.lexingtonthemes.com"}
+  title={seo?.title || frontmatter?.title || "Default Title"}
+  description={seo?.description || frontmatter?.description || "Default description"}
+  canonical={seo?.canonical || Astro.url.pathname}
   openGraph={{
-    url: seo.openGraph?.url || "https://www.lexingtonthemes.com",
-    title: seo.openGraph?.title || "Open Graph Title",
-    description: seo.openGraph?.description || "Open Graph Description",
-    images: seo.openGraph?.images || [
+    url: seo?.openGraph?.url || Astro.url.pathname,
+    title: seo?.openGraph?.title || frontmatter?.title || "Open Graph Title",
+    description: seo?.openGraph?.description || frontmatter?.description || "Open Graph Description",
+    images: seo?.openGraph?.images || [
       {
-        url: "https://www.lexingtonthemes.com/opengraph/social-og.jpg",
+        url: new URL("/opengraph/social-og.jpg", Astro.site).href,
         width: 1200,
         height: 630,
         alt: "Social open graph",
         type: "image/jpeg",
       },
     ],
-    site_name: seo.openGraph?.site_name || "YourSitesName",
+    site_name: seo?.openGraph?.site_name || "YourSitesName",
   }}
   twitter={{
-    handle: seo.twitter?.handle || "@TwitterHandle",
-    site: seo.twitter?.site || "@site",
-    cardType: seo.twitter?.cardType || "summary_large_image",
+    handle: seo?.twitter?.handle || "@TwitterHandle",
+    site: seo?.twitter?.site || "@site",
+    cardType: seo?.twitter?.cardType || "summary_large_image",
   }}
   additionalLinkTags={[
     { rel: "icon", type: "image/png", href: "/favicons/favicon-96x96.png", sizes: "96x96" },
@@ -46,13 +69,13 @@ Use AstroSeo in all the pages you want different Seo than the index page
 />
 <BaseLayout>
   <section>
-    <div class="max-w-7xl mx-auto px-6 py-12 md:px-12 lg:px-32 lg:pt-24">
+    <div class="max-w-7xl mx-auto px-6 py-12 pt-0 mt-0 md:px-12 lg:px-32 ">
       {/* Hero Image */}
       <div>
         <img
           class="w-full lg:h-72 object-cover object-center rounded-md"
-          src={frontmatter.image?.url || "/placeholder.jpg"}
-          alt={frontmatter.image?.alt || "Trip Image"}
+          src={frontmatter?.image?.url || "/placeholder.jpg"}
+          alt={frontmatter?.image?.alt || "Trip Image"}
         />
       </div>
 
@@ -61,8 +84,9 @@ Use AstroSeo in all the pages you want different Seo than the index page
         <main class="flex-1">
           {/* Tags */}
           <div class="flex flex-wrap gap-3 mb-6">
-            {(frontmatter.tags || []).map((tag) => (
+            {(frontmatter?.tags || []).map((tag) => (
               <a
+                key={tag}
                 href={`/tags/${tag}`}
                 class="uppercase text-xs font-medium text-black hover:text-blue-500"
               >
@@ -73,18 +97,19 @@ Use AstroSeo in all the pages you want different Seo than the index page
 
           {/* Title */}
           <h1 class="text-4xl md:text-6xl font-medium font-display text-black tracking-tight text-start">
-            {frontmatter.title || "Untitled Trip"}
+            {frontmatter?.title || "Untitled Trip"}
           </h1>
 
           {/* Description */}
           <p class="mt-6 text-zinc-500 max-w-2xl">
-            <em>{frontmatter.description || "No description provided."}</em>
+            <em>{frontmatter?.description || "No description provided."}</em>
           </p>
 
           {/* Article Content */}
           <div class="mt-12 max-w-2xl ">
             <div
-              id="trip_content_container" class=" font-display prose prose-sm text-neutral-600 max-w-none prose-a:text-blue-400 hover:prose-a:text-black prose-h1:text-black prose-h2:text-black prose-h2:font-semibold prose-p:text-sm prose-img:bg-neutral-50 prose-img:border-2 prose-img:border-transparent prose-pre:font-mono prose-pre:rounded-none prose-headings:font-display"
+              id="trip_content_container"
+              class=" font-display prose prose-sm text-neutral-600 max-w-none prose-a:text-blue-400 hover:prose-a:text-black prose-h1:text-black prose-h2:text-black prose-h2:font-semibold prose-p:text-sm prose-img:bg-neutral-50 prose-img:border-2 prose-img:border-transparent prose-pre:font-mono prose-pre:rounded-none prose-headings:font-display"
             >
               <slot />
             </div>
@@ -92,33 +117,39 @@ Use AstroSeo in all the pages you want different Seo than the index page
         </main>
 
         {/* Sticky Sidebar */}
-        <aside class="lg:w-72 lg:sticky top-32 h-fit space-y-6">
-       <!-- {/* Booking Box */}
-<div class="p-4 border border-black rounded-sm text-center">
-  <p class="text-lg font-semibold text-black">
-    <span class="line-through text-gray-500">₹ {frontmatter.realCost || "N/A"}</span>
-    <span class="ml-2 text-green-600">₹ {frontmatter.discountedCost || "N/A"}</span>
-  </p>
-  <button class="mt-4 w-full bg-black text-white py-2 px-4 rounded-sm hover:bg-opacity-90 transition">
-    Book Now
-  </button>
-</div> -->
+        <aside class="lg:w-72 lg:sticky top-2 h-fit space-y-6 ">
+          <!-- {/* Booking Box */}
+          {frontmatter?.realCost && frontmatter?.discountedCost && (
+            <div class="p-4 border border-black rounded-sm text-center">
+              <p class="text-lg font-semibold text-black">
+                <span class="line-through text-gray-500">₹ {frontmatter.realCost}</span>
+                <span class="ml-2 text-green-600">₹ {frontmatter.discountedCost}</span>
+              </p>
+              <button class="mt-4 w-full bg-black text-white py-2 px-4 rounded-sm hover:bg-opacity-90 transition">
+                Book Now
+              </button>
+            </div>
+          )} -->
 
-          {/* Trip Index */}
-          <div class="border-t pt-6">
+          <div class="border-t pt-6 px-5">
             <h2 class="text-sm font-semibold text-black uppercase mb-4">Trip Index</h2>
             <ul class="text-sm space-y-2 text-black/70">
-              {/* Dummy Headings Example */}
-              {[
-                { id: "overview", text: "Overview" },
-                { id: "itinerary", text: "Itinerary" },
-                { id: "inclusions", text: "What's Included" },
-                { id: "faq", text: "FAQs" },
-              ].map((heading) => (
-                <li key={heading.id}>
-                  <a href={`#${heading.id}`} class="hover:text-black transition">
+              {headingTree.map((heading) => (
+                <li key={heading.slug}>
+                  <a href={`#${heading.slug}`} class="hover:text-black transition">
                     {heading.text}
                   </a>
+                  {heading.children.length > 0 && (
+                    <ul class="pl-4 space-y-2">
+                      {heading.children.map((child) => (
+                        <li key={child.slug}>
+                          <a href={`#${child.slug}`} class="hover:text-black transition">
+                            {child.text}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </li>
               ))}
             </ul>

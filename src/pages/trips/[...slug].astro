@@ -11,7 +11,7 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render(); // Supports MDX rendering
+const { Content , headings } = await entry.render(); // Supports MDX rendering
 
 // Use trip info from entry.data for SEO/head information.
 const seo = {
@@ -42,7 +42,7 @@ const seo = {
   }
 };
 ---
-<TripPostLayout frontmatter={entry.data} seo={seo}>
+<TripPostLayout headings={headings} frontmatter={entry.data} seo={seo}>
   
   <Content />
 </TripPostLayout>
