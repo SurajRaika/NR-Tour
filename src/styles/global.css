@@ -55,3 +55,9 @@
 }
 
 
+
+#trip_content_container > div{
+  margin:0;
+  padding:0;
+
+}
