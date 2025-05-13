@@ -3,137 +3,77 @@ import "../styles/global.css";
 import { AstroSeo } from "@astrolib/seo";
 
 // Props
-const { 
-  title = "NRtours - Best Taxi Service in Rajasthan", 
-  description = "Book reliable and affordable taxi services across Rajasthan with New Rajasthan Tours (NRtours). Hassle-free rides, anytime, anywhere.", 
-  tags = ["Taxi Service", "Rajasthan Travel", "NRtours", "One-Way Taxi", "Airport Transfers"] 
+const {
+  title = "NRtours - Best Taxi Service in Rajasthan",
+  description = "Book reliable and affordable taxi services across Rajasthan with New Rajasthan Tours (NRtours). Hassle-free rides, anytime, anywhere.",
+  tags = ["Taxi Service", "Rajasthan Travel", "NRtours", "One-Way Taxi", "Airport Transfers"]
 } = Astro.props;
 
 const formattedTags = Array.isArray(tags) ? tags.join(", ") : tags;
+const canonicalUrl = `https://nrtours.com/${title.toLowerCase().replace(/\s+/g, "-")}`;
+const ogImage = "https://images.pexels.com/photos/5589173/pexels-photo-5589173.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
 ---
 
 <AstroSeo
   title={title}
   description={description}
-  canonical={`https://yoursite.com/${title.toLowerCase().replace(/\s+/g, "-")}`}
+  canonical={canonicalUrl}
   openGraph={{
-    url: `https://yoursite.com/${title.toLowerCase().replace(/\s+/g, "-")}`,
+    url: canonicalUrl,
     title,
     description,
     images: [
       {
-        url: "https://images.pexels.com/photos/5589173/pexels-photo-5589173.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        url: ogImage,
         width: 1260,
         height: 750,
-        alt: `${title} Open Graph Image`,
+        alt: `${title} - Taxi Service in Rajasthan`,
         type: "image/jpeg",
       },
     ],
-    site_name: "Nr Taxi Service",
+    site_name: "NRtours",
     type: "website",
     locale: "en_US",
   }}
   twitter={{
-    handle: "@yourhandle",
-    site: "@yoursite",
+    handle: "@nrtours",
+    site: "@nrtours",
     cardType: "summary_large_image",
   }}
 />
 
-
-
-
-
+<!-- Essential Meta Tags -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content={description} />
+<meta name="keywords" content={formattedTags} />
+<meta name="author" content="New Rajasthan Tours" />
 
-<!-- Basic Meta Tags -->
-<title>Your Website Title</title>
-<meta
-  name="description"
-  content="A brief description of your website content."
-/>
-<meta name="keywords" content="keyword1, keyword2, keyword3" />
-<meta name="author" content="Your Name or Company Name" />
-
-
-
-<link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="favicons/favicon.svg" />
-<link rel="shortcut icon" href="favicons/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png" />
-<link rel="manifest" href="favicons/site.webmanifest" />
-
-
-
-
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.yourwebsite.com/" />
-<meta property="og:title" content="Your Website Title" />
-<meta
-  property="og:description"
-  content="A brief description of your website content."
-/>
-<meta
-  property="og:image"
-  content="https://www.yourwebsite.com/path/to/image.jpg"
-/>
-
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content="https://www.yourwebsite.com/" />
-<meta property="twitter:title" content="Your Website Title" />
-<meta
-  property="twitter:description"
-  content="A brief description of your website content."
-/>
-<meta
-  property="twitter:image"
-  content="https://www.yourwebsite.com/path/to/image.jpg"
-/>
+<!-- Favicons -->
+<link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
+<link rel="shortcut icon" href="/favicons/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+<link rel="manifest" href="/favicons/site.webmanifest" />
 
 <!-- Canonical URL -->
-<link rel="canonical" href="https://www.yourwebsite.com/" />
+<link rel="canonical" href={canonicalUrl} />
 
-<!-- Additional SEO -->
+<!-- SEO -->
 <meta name="robots" content="index, follow" />
-<meta name="googlebot" content="index, follow" />
-
-<!-- Apple Touch Icon (already included in favicons, but keeping for backwards compatibility) -->
-<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png" />
-
-<!-- Theme Color for Mobile Browsers -->
 <meta name="theme-color" content="#ffffff" />
 
-<!-- For IE -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<!-- HTML in your document's head -->
+<!-- Fonts and Styles -->
 <link rel="preconnect" href="https://rsms.me/" />
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-<link
-  href="https://api.fontshare.com/v2/css?f[]=jet-brains-mono@1,2&display=swap"
-  rel="stylesheet"
-/>
+<link href="https://api.fontshare.com/v2/css?f[]=jet-brains-mono@1,2&display=swap" rel="stylesheet" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap"
-  rel="stylesheet"
-/>
+<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet" />
 
+<!-- Splide Slider -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css" />
+<script defer src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"></script>
 
-
-<!-- <script src="https://unpkg.com/mailgo@0.12.2/dist/mailgo.min.js"></script> -->
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css"
-/>
-<script
-  defer
-  src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"
-></script>
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
-></script>
-
-<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<!-- Alpine.js (single instance, removed duplicate) -->
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
