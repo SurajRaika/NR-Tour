@@ -2,6 +2,7 @@
 import BaseHead from "@/components/BaseHead.astro";
 import Navigation from "@/components/global/Navigation.astro";
 import Footer from "@/components/global/Footer.astro";
+import AiButton from "@/components/global/AiButton.astro";
 
 const { title, description, tags } = Astro.props;
 ---
@@ -14,5 +15,6 @@ const { title, description, tags } = Astro.props;
     <Navigation />
     <main class="flex-grow"><slot /></main>
     <Footer />
+    <AiButton />
   </body>
 </html>
