@@ -4,8 +4,8 @@ pubDate: 2024-01-29
 description: "Known as the Blue City of Rajasthan, Jodhpur is a destination that perfectly blends royal heritage, cultural charm, and architectural grandeur. From majestic forts to serene lakes and vibrant bazaars, every corner of Jodhpur tells a story of history and hospitality."
 author: "Suraj Raika"
 image:
-  url: "https://via.placeholder.com/1200x630/6495ED/FFFFFF?text=Jodhpur+Blue+City"
-  alt: "Jodhpur Blue City"
+  url: "https://images.pexels.com/photos/797824/pexels-photo-797824.jpeg"
+  alt: "Mehrangarh Fort and the Blue City of Jodhpur, Rajasthan."
 tags: ["jodhpur", "rajasthan", "travel", "top-10"]
 ---
 

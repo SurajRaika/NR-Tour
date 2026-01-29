@@ -4,8 +4,8 @@ pubDate: 2024-01-29
 description: "Rajasthan, the Land of Kings, is a place where history, culture, and royalty come alive. From magnificent forts that guard the sands of time to grand palaces that echo the legacy of Rajput rulers — every corner of Rajasthan tells a story of valor and elegance."
 author: "Suraj Raika"
 image:
-  url: "https://via.placeholder.com/1200x630/8B4513/FFFFFF?text=Royal+Rajasthan"
-  alt: "Royal Rajasthan"
+  url: "https://images.pexels.com/photos/33797760/pexels-photo-33797760.jpeg"
+  alt: "Majestic Neemrana Fort-Palace in Rajasthan, India."
 tags: ["rajasthan", "forts", "palaces", "travel"]
 ---
 

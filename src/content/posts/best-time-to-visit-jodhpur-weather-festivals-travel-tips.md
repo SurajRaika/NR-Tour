@@ -4,8 +4,8 @@ pubDate: 2024-01-29
 description: "Placeholder description for Best Time to Visit Jodhpur."
 author: "Suraj Raika"
 image:
-  url: "https://via.placeholder.com/1200x630/ADD8E6/000000?text=Jodhpur+Travel"
-  alt: "Jodhpur Travel Tips"
+  url: "https://images.pexels.com/photos/34373989/pexels-photo-34373989.jpeg"
+  alt: "Vibrant traditional dancers performing at Mehrangarh Fort in Jodhpur, Rajasthan."
 tags: ["jodhpur", "travel-tips", "weather", "festivals"]
 ---
 

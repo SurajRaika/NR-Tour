@@ -4,8 +4,8 @@ pubDate: 2024-01-29
 description: "Indonesia's nationwide ban on elephant riding sparks debate: a win for animal welfare, but concerns rise for communities dependent on this tourism."
 author: "Suraj Raika"
 image:
-  url: "https://via.placeholder.com/1200x630/228B22/FFFFFF?text=Ethical+Tourism+Elephants"
-  alt: "Elephants and Ethical Tourism"
+  url: "https://images.pexels.com/photos/9353071/pexels-photo-9353071.jpeg"
+  alt: "Man riding an elephant, representing elephant riding tourism."
 tags: ["ethical-tourism", "indonesia", "animal-welfare", "elephant-riding-ban", "travel-news"]
 ---
 

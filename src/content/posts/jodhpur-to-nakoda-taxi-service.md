@@ -4,8 +4,8 @@ pubDate: 2024-01-29
 description: "Travel smart with our cost-effective and reliable taxi service Jodhpur to nakoda. We offer both one-way and round-trip options, tailored to your schedule and budget."
 author: "Suraj Raika"
 image:
-  url: "https://via.placeholder.com/1200x630/0000FF/FFFFFF?text=Taxi+Service+India"
-  alt: "Taxi Service in India"
+  url: "https://images.pexels.com/photos/26613224/pexels-photo-26613224.jpeg"
+  alt: "Stunning architecture of Ranakpur Jain Temple in Rajasthan, India."
 tags: ["taxi-service", "jodhpur", "nakoda"]
 ---
 

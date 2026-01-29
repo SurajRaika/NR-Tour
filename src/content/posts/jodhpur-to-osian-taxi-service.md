@@ -4,8 +4,8 @@ pubDate: 2024-01-29
 description: "Placeholder description for Jodhpur to Osian Taxi Service."
 author: "Suraj Raika"
 image:
-  url: "https://via.placeholder.com/1200x630/0000FF/FFFFFF?text=Jodhpur+Osian+Taxi"
-  alt: "Jodhpur to Osian Taxi"
+  url: "https://images.pexels.com/photos/26621239/pexels-photo-26621239.jpeg"
+  alt: "Long, empty road stretching through a barren desert landscape."
 tags: ["jodhpur", "osian", "taxi-service"]
 ---
 

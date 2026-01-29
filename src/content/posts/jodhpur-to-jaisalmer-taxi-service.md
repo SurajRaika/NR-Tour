@@ -4,8 +4,8 @@ pubDate: 2024-01-29
 description: "Experience a seamless journey with our Jodhpur to Jaisalmer Taxi Service, trusted by thousands for comfort, punctuality, and pocket-friendly fares."
 author: "Suraj Raika"
 image:
-  url: "https://via.placeholder.com/1200x630/DAA520/FFFFFF?text=Jodhpur+Jaisalmer+Taxi"
-  alt: "Jodhpur to Jaisalmer Taxi"
+  url: "https://images.pexels.com/photos/19559113/pexels-photo-19559113.jpeg"
+  alt: "Green sports car on an Indian highway near Jaisalmer, Rajasthan."
 tags: ["jodhpur", "jaisalmer", "taxi-service"]
 ---
 

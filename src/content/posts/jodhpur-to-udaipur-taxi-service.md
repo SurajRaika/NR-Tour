@@ -4,8 +4,8 @@ pubDate: 2024-01-29
 description: "Planning a comfortable journey from the Blue City to the City of Lakes? New Rajasthan Tours offers a seamless and hassle-free Jodhpur to Udaipur Taxi Service designed for travelers who value comfort, safety, and punctuality."
 author: "Suraj Raika"
 image:
-  url: "https://via.placeholder.com/1200x630/FFC0CB/000000?text=Jodhpur+Udaipur+Taxi"
-  alt: "Jodhpur to Udaipur Taxi"
+  url: "https://images.pexels.com/photos/19559113/pexels-photo-19559113.jpeg"
+  alt: "Green sports car on an Indian highway near Jaisalmer, Rajasthan."
 tags: ["jodhpur", "udaipur", "taxi-service"]
 ---
 

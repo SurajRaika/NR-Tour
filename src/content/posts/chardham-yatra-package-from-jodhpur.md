@@ -4,8 +4,8 @@ pubDate: 2024-01-29
 description: "Experience the spiritual journey of a lifetime with the Char Dham Yatra Tour Package from Jodhpur by New Rajasthan Tours, covering the four sacred shrines of Yamunotri, Gangotri, Kedarnath, and Badrinath nestled in the majestic Himalayas."
 author: "Suraj Raika"
 image:
-  url: "https://via.placeholder.com/1200x630/808080/FFFFFF?text=Chardham+Yatra"
-  alt: "Chardham Yatra Package"
+  url: "https://images.pexels.com/photos/32619517/pexels-photo-32619517.jpeg"
+  alt: "Large crowd at Kedarnath Temple in the Himalayas, India."
 tags: ["chardham-yatra", "jodhpur", "pilgrimage", "tour-package"]
 ---
 

@@ -4,8 +4,8 @@ pubDate: 2024-01-29
 description: "Discover the best taxi services in Jaipur for comfortable, safe, and reliable travel. Explore local sights, airport transfers, and outstation trips with ease."
 author: "Suraj Raika"
 image:
-  url: "https://via.placeholder.com/1200x630/FFD700/000000?text=Jaipur+Taxi+Service"
-  alt: "Taxi Service in Jaipur"
+  url: "https://pixabay.com/get/g4bece35f00b07207c54cb7d62e29cad320b0ef4709ed4efa50ef87a6f4fcb31eedc2b743fa6c8001d0eae7e562f4ea9c5fdc50cd96ce6af0a00d0a3cecb8749f_640.jpg"
+  alt: "Traditional auto rickshaw taxi in India."
 tags: ["jaipur", "taxi-service", "travel-guide"]
 ---
 
