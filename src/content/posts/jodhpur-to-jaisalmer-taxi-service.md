@@ -2,10 +2,10 @@
 title: "Jodhpur to Jaisalmer Taxi Service"
 pubDate: 2024-01-29
 description: "Experience a seamless journey with our Jodhpur to Jaisalmer Taxi Service, trusted by thousands for comfort, punctuality, and pocket-friendly fares."
-author: "Gemini"
+author: "Suraj Raika"
 image:
-  url: "/images/fort-jaipur.jpg"
-  alt: "Fort Jaipur"
+  url: "https://via.placeholder.com/1200x630/DAA520/FFFFFF?text=Jodhpur+Jaisalmer+Taxi"
+  alt: "Jodhpur to Jaisalmer Taxi"
 tags: ["jodhpur", "jaisalmer", "taxi-service"]
 ---
 

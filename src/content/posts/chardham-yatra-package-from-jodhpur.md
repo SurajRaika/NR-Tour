@@ -2,10 +2,10 @@
 title: "Chardham Yatra Package from Jodhpur"
 pubDate: 2024-01-29
 description: "Experience the spiritual journey of a lifetime with the Char Dham Yatra Tour Package from Jodhpur by New Rajasthan Tours, covering the four sacred shrines of Yamunotri, Gangotri, Kedarnath, and Badrinath nestled in the majestic Himalayas."
-author: "Gemini"
+author: "Suraj Raika"
 image:
-  url: "/images/fort-jaipur.jpg"
-  alt: "Fort Jaipur"
+  url: "https://via.placeholder.com/1200x630/808080/FFFFFF?text=Chardham+Yatra"
+  alt: "Chardham Yatra Package"
 tags: ["chardham-yatra", "jodhpur", "pilgrimage", "tour-package"]
 ---
 

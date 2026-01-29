@@ -2,10 +2,10 @@
 title: "Top 10 Must-Visit Places in Jodhpur – The Blue City of Rajasthan"
 pubDate: 2024-01-29
 description: "Known as the Blue City of Rajasthan, Jodhpur is a destination that perfectly blends royal heritage, cultural charm, and architectural grandeur. From majestic forts to serene lakes and vibrant bazaars, every corner of Jodhpur tells a story of history and hospitality."
-author: "Gemini"
+author: "Suraj Raika"
 image:
-  url: "/images/fort-jaipur.jpg"
-  alt: "Fort Jaipur"
+  url: "https://via.placeholder.com/1200x630/6495ED/FFFFFF?text=Jodhpur+Blue+City"
+  alt: "Jodhpur Blue City"
 tags: ["jodhpur", "rajasthan", "travel", "top-10"]
 ---
 

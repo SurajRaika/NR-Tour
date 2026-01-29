@@ -2,10 +2,10 @@
 title: "Jodhpur to Osian Taxi Service"
 pubDate: 2024-01-29
 description: "Placeholder description for Jodhpur to Osian Taxi Service."
-author: "Gemini"
+author: "Suraj Raika"
 image:
-  url: "/images/fort-jaipur.jpg"
-  alt: "Fort Jaipur"
+  url: "https://via.placeholder.com/1200x630/0000FF/FFFFFF?text=Jodhpur+Osian+Taxi"
+  alt: "Jodhpur to Osian Taxi"
 tags: ["jodhpur", "osian", "taxi-service"]
 ---
 

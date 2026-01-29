@@ -2,10 +2,10 @@
 title: "Best Time to Visit Jodhpur – Weather, Festivals & Travel Tips"
 pubDate: 2024-01-29
 description: "Placeholder description for Best Time to Visit Jodhpur."
-author: "Gemini"
+author: "Suraj Raika"
 image:
-  url: "/images/fort-jaipur.jpg"
-  alt: "Fort Jaipur"
+  url: "https://via.placeholder.com/1200x630/ADD8E6/000000?text=Jodhpur+Travel"
+  alt: "Jodhpur Travel Tips"
 tags: ["jodhpur", "travel-tips", "weather", "festivals"]
 ---
 
