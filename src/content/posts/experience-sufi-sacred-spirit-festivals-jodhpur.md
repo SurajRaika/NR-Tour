@@ -1,9 +1,11 @@
 ---
 title: "Experience the Divine: World Sufi Spirit Festival & Sacred Spirit Festival in Jodhpur 2026"
-pubDate: "Feb 01 2026"
+pubDate: 2026-02-01
 description: "Immerse yourself in the enchanting melodies and spiritual aura of the World Sufi Spirit Festival and Sacred Spirit Festival in Jodhpur, February 2026. Discover how NR Tours can enhance your journey to these divine events."
 author: "NR Tours"
-image: "/images/fort-jaipur.jpg"
+image:
+  url: "/images/fort-jaipur.jpg"
+  alt: "Sufi festival in Jodhpur"
 tags: ["Jodhpur", "Festivals", "Sufi", "Sacred Spirit", "Travel", "Rajasthan"]
 ---
 
