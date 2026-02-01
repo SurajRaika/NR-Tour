@@ -1,0 +1,13 @@
+---
+import MarkdownPostLayout from "../layouts/MarkdownPostLayout.astro";
+import { getEntry } from "astro:content";
+
+const entry = await getEntry("posts", "experience-sufi-sacred-spirit-festivals-jodhpur");
+const { Content } = await entry.render();
+
+const { title, pubDate, description, author, image, tags } = entry.data;
+---
+
+<MarkdownPostLayout title={title} pubDate={pubDate} description={description} author={author} image={image} tags={tags}>
+  <Content />
+</MarkdownPostLayout>

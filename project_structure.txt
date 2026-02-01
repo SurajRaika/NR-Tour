@@ -1,0 +1,70 @@
+# Project Structure Overview
+
+This document provides a high-level overview of the project's directory and file structure, intended for new developers to quickly understand how the project is organized.
+
+## Root Directory
+
+-   `package.json`, `bun.lock`, `package-lock.json`: Manage project dependencies and scripts.
+-   `astro.config.mjs`: Astro framework configuration.
+-   `tsconfig.json`: TypeScript configuration.
+-   `README.md`: General project information and setup instructions.
+-   `LICENSE`: Project licensing information.
+-   `cars.json`: Data file, likely for car listings or related content.
+
+## `public/`
+
+This directory serves static assets that are directly accessible via the web server.
+-   `images/`: Contains various images used throughout the site.
+-   `brands/`: SVG files for different brands, possibly car brands or partners.
+-   `favicons/`, `favicons_Sdsd/`: Contains favicon files for different browser and device compatibility.
+-   Other direct image assets like `characterpointing.png`, `NRtours-logo.png`, `thumnail.png`.
+
+## `src/`
+
+This is the main source code directory for the Astro project.
+
+### `src/components/`
+
+Contains reusable Astro components that are not directly tied to a specific route.
+-   `entries/`: Components related to blog entries or listings (e.g., `EntriesOne.astro`, `TripEntriesOne.astro`).
+-   `global/`: Global UI components used across the site (e.g., `Footer.astro`, `Navigation.astro`, `Cta.astro`, `cars.astro`, `AiButton.astro`).
+-   `landing/`: Components specific to landing pages (e.g., `Hero.astro`).
+-   Other direct components like `AiIcon.astro`, `BaseHead.astro`, `TocItem.astro`.
+
+### `src/content/`
+
+Used by Astro's Content Collections API to manage structured content.
+-   `config.ts`: Configuration for content collections.
+-   `posts/`: Markdown (`.md`) files for blog posts or articles.
+-   `trips/`: MDX (`.mdx`) files for trip-related content, allowing embedded components.
+
+### `src/layouts/`
+
+Defines layout components that wrap pages, providing consistent structure and styling.
+-   `BaseLayout.astro`: A foundational layout.
+-   `MarkdownPostLayout.astro`: Layout specifically for markdown blog posts.
+-   `TripPostLayout.astro`: Layout specifically for trip-related content.
+
+### `src/pages/`
+
+Astro uses file-based routing, so each `.astro` or `.md` file here corresponds to a route on the website.
+-   `index.astro`: The homepage.
+-   `404.astro`: The custom 404 error page.
+-   Individual `.astro` files: Correspond to specific static pages (e.g., `about-us.astro`, `contact-us.astro`, `book-cab.astro`).
+-   Dynamic routes:
+    -   `posts/[...slug].astro`: Handles dynamic routing for blog posts.
+    -   `trips/[...slug].astro`: Handles dynamic routing for trip pages.
+    -   `tags/[tag].astro`: Handles dynamic routing for tag-specific pages.
+-   `services/`: Directory for service-related pages (e.g., `airport.astro`, `local.astro`, `one-way.astro`, `outstation.astro`, `tour.astro`).
+-   `rss.xml.js`: Generates the RSS feed for the site.
+
+### `src/styles/`
+
+Contains global styling for the project.
+-   `global.css`: Main stylesheet, likely importing Tailwind CSS and defining custom styles.
+
+## Other Directories
+
+-   `.astro/`: Astro's internal cache and build artifacts.
+-   `.git/`: Git version control metadata.
+-   `node_modules/`: Installed Node.js dependencies.
